@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════
+   Nexus — Custom Chainlit Theme
+   Dark mode with purple accent (#7c6ef0)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Base typography ──────────────────────────────────── */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(124, 110, 240, 0.4);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 110, 240, 0.7);
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ── Message bubbles ──────────────────────────────────── */
+.message-content {
+    line-height: 1.75 !important;
+}
+
+.message-content pre {
+    border-radius: 8px !important;
+    border: 1px solid rgba(124, 110, 240, 0.15) !important;
+}
+
+/* ── Message fade-in animation ────────────────────────── */
+[class*="message"] {
+    animation: nexusFadeIn 0.35s ease-out;
+}
+
+@keyframes nexusFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Step indicators — purple accent + glow ───────────── */
+.step {
+    border-left: 2px solid #7c6ef0 !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.step:hover {
+    box-shadow: 0 0 12px rgba(124, 110, 240, 0.2);
+}
+
+/* ── Starter cards — glassmorphism ────────────────────── */
+[class*="starter"] {
+    background: rgba(26, 26, 36, 0.6) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(124, 110, 240, 0.15) !important;
+    border-radius: 12px !important;
+    transition: all 0.25s ease;
+}
+
+[class*="starter"]:hover {
+    transform: translateY(-3px);
+    border-color: rgba(124, 110, 240, 0.4) !important;
+    box-shadow: 0 8px 24px rgba(124, 110, 240, 0.15);
+}
+
+/* ── Details/summary styling (for expandable sections) ── */
+details {
+    background: rgba(26, 26, 36, 0.5);
+    border: 1px solid rgba(124, 110, 240, 0.12);
+    border-radius: 8px;
+    padding: 0;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+details summary {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #e0dff5;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+details summary:hover {
+    background: rgba(124, 110, 240, 0.08);
+}
+
+details[open] summary {
+    border-bottom: 1px solid rgba(124, 110, 240, 0.12);
+    color: #a78bfa;
+}
+
+details > :not(summary) {
+    padding: 12px 14px;
+}
+
+/* ── Paper card styling (HTML in messages) ────────────── */
+.paper-card {
+    background: rgba(26, 26, 36, 0.7);
+    border: 1px solid rgba(124, 110, 240, 0.15);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 6px 0;
+    transition: border-color 0.2s ease;
+}
+
+.paper-card:hover {
+    border-color: rgba(124, 110, 240, 0.4);
+}
+
+.paper-card .paper-title {
+    font-weight: 600;
+    color: #e0dff5;
+    margin-bottom: 4px;
+}
+
+.paper-card .paper-meta {
+    color: #888;
+    font-size: 0.85em;
+}
+
+.paper-card .paper-abstract {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-top: 6px;
+}
+
+.paper-card a {
+    color: #7c6ef0;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+
+.paper-card a:hover {
+    text-decoration: underline;
+}
+
+/* ── Quality badge in final answer ────────────────────── */
+.quality-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.quality-badge.pass {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.quality-badge.fail {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* ── Score bar (for critic scorecard) ─────────────────── */
+.score-bar {
+    display: inline-block;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(124, 110, 240, 0.2);
+    width: 80px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.score-bar .score-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #7c6ef0, #a78bfa);
+}
+
+/* ── Nexus footer styling ─────────────────────────────── */
+.nexus-footer {
+    color: #666;
+    font-size: 0.85em;
+    border-top: 1px solid rgba(124, 110, 240, 0.12);
+    padding-top: 10px;
+    margin-top: 16px;
+}
+
+/* ── Link styling in messages ─────────────────────────── */
+.message-content a {
+    color: #a78bfa;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+    transition: border-color 0.2s;
+}
+
+.message-content a:hover {
+    border-color: #a78bfa;
+}

@@ -1,0 +1,46 @@
+# ============================================
+# Nexus — Multi-Agent Research Assistant
+# Requirements (March 2026)
+#
+# Version research:
+#   LangGraph 1.1.0  — latest stable (released Mar 10, 2026)
+#   LangChain 0.3.x  — current stable series
+#   Ollama models     — llama3.1:8b recommended for agents
+#                       (llama4:8b available but newer/less tested)
+#                       (qwen3:7b best for coding tasks)
+# ============================================
+
+# --- Core: LangGraph Agent Framework ---
+langgraph>=1.1.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+
+# --- LLM Providers (all have free tiers) ---
+langchain-groq>=0.2.0            # PRIMARY: Groq (Llama 70B, free)
+langchain-google-genai>=2.0.0    # BACKUP: Gemini 2.5 Flash (free)
+
+# --- LLM Provider: Ollama (local, $0 cost) ---
+langchain-ollama>=0.3.0
+
+# --- Search Tools ---
+arxiv>=2.1.3                  # arXiv API client (free, no key)
+semanticscholar>=0.8.0        # Semantic Scholar API (free, no key)
+
+# --- Vector Store & Embeddings ---
+faiss-cpu>=1.8.0              # Local vector store (no GPU needed)
+langchain-huggingface>=0.1.0  # HuggingFace embeddings integration
+sentence-transformers>=3.0.0  # Embedding models (runs locally)
+
+# --- Chat UI ---
+streamlit>=1.40.0
+chainlit>=2.0.0
+
+# --- Configuration ---
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# --- Testing ---
+pytest>=8.0.0
+pytest-asyncio>=0.24.0

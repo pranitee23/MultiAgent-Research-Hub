@@ -1,0 +1,29 @@
+# Create folder: mkdir -p .chainlit
+# Create file:   .chainlit/config.toml
+
+[project]
+name = "Nexus"
+enable_telemetry = false
+
+[features]
+prompt_playground = false
+unsafe_allow_html = true
+latex = true
+
+[features.spontaneous_file_upload]
+enabled = false
+
+[UI]
+name = "Nexus"
+description = "Multi-Agent Research Assistant — 4 AI agents collaborate to research, synthesize, and verify academic topics."
+default_theme = "dark"
+custom_css = "/public/custom.css"
+
+[UI.theme]
+font_family = "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+
+[UI.theme.dark]
+background = "#0f0f13"
+paper = "#1a1a24"
+primary = "#7c6ef0"
+secondary = "#1e1e2e"
