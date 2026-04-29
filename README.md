@@ -47,4 +47,4 @@ The **Nexus Research Agent** addresses the "hallucination" and "token-bloat" cha
 * **Startup .env Guard:** Proactive API key validation on application boot.
 
 ---
-*Developed by [Chinmay Kulkarni](https://github.com/ckulkarni13)*
+*Developed by [Pranitee_Majukar](https://github.com/pranitee23)*
